@@ -4,9 +4,9 @@ $(document).ready(function () { // we must wait for the DOM to be ready as the b
 		var radio = $(this);
 
 		if (radio.val() === "yes") {
-			radio.closest("p").next(".meds").addClass("active");
+			radio.closest("h5").next(".meds").addClass("active");
 		} else {
-			radio.closest("p").next(".meds").removeClass("active");
+			radio.closest("h5").next(".meds").removeClass("active");
 		}
 	});
 
