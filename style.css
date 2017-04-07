@@ -53,6 +53,7 @@ table {
 p {
     line-height: 1em;
     padding: 0px 20px 10px 20px;
+    margin: 0;
 }
 
 h1 {
@@ -67,7 +68,16 @@ img {
     width: 300px;
     display: block;
     margin: auto;
-    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+table {
+    max-width: 350px;
+    margin: auto;
+}
+
+form {
+    padding-top: 20px;
 }
 
 .meds {
@@ -84,7 +94,14 @@ img {
     padding: 0 1em 1em 1em;
 }
 
-.reset.active {}
+.caption {
+    font-size: 12px;
+    width: 300px;
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+    line-height: 14px;
+}
 
 .button {
     padding: 10px;
