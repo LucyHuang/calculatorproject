@@ -79,4 +79,6 @@ h6 {
 
 .reset.active {}
 
-.button {}
+.button {
+    padding: 10px;
+}

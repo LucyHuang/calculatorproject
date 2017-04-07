@@ -11,22 +11,21 @@ $(document).ready(function () { // we must wait for the DOM to be ready as the b
 	});
 
 	$("input[type='checkbox']").on("click", function (e) {
-			var total = 0;
-			$("table").find("tbody").html("");
+		var total = 0;
+		$("table").find("tbody").html("");
 
-			$("input[type='checkbox']:checked").each(function () {
-					var drug = $(this);
-					var drugName = drug.val();
-					var duaneReade = drug.data("duane-reade");
-					var astra = drug.data("astra");
-					var costco = drug.data("costco");
-					var html = "<tr><td>" + drugName + "</td><td>" + astra + "</td><td>" + duaneReade + "</td><td>" + costco + "</td></tr>";
+		$("input[type='checkbox']:checked").each(function () {
+			var drug = $(this);
+			var drugName = drug.val();
+			var duaneReade = drug.data("duane-reade");
+			var astra = drug.data("astra");
+			var costco = drug.data("costco");
+			var html = "<tr><td>" + drugName + "</td><td>" + astra + "</td><td>" + duaneReade + "</td><td>" + costco + "</td></tr>";
 
-					$("table").find("tbody").append(html);
+			$("table").find("tbody").append(html);
 
-					$(".button").on("click", "reset");
-				);
-			});
+
+		});
 	});
 
 
