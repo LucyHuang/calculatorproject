@@ -20,10 +20,15 @@ $(document).ready(function () { // we must wait for the DOM to be ready as the b
 			var duaneReade = drug.data("duane-reade");
 			var astra = drug.data("astra");
 			var costco = drug.data("costco");
-			var html = "<tr><td>" + drugName + "</td><td>" + astra + "</td><td>" + duaneReade + "</td><td>" + costco + "</td></tr>";
+			var lowest = drug.data("lowest");
+			var html = "<tr><td>" + drugName + "</td><td>" + astra + "</td><td>" + duaneReade + "</td><td>" + costco + "</td><td>" + lowest + "</td></td>";
 
 			$("table").find("tbody").append(html);
 
+			$(".button").on("click", function (e) {
+				e.preventDefault();
+				var lowesttotal = parseInt($(drug.data("lowest")).val());
+			});
 
 		});
 	});
