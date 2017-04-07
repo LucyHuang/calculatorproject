@@ -1,25 +1,33 @@
 $(document).ready(function () { // we must wait for the DOM to be ready as the browser can take a little while to read all of the HTML and build the elements
 
-			$("input" [class = "yes"
-				type = 'radio']: checked).each(function (e) {
-				e.preventDefault(); //have to add this so we don't get weird behavior in older browsers (or IE)
+	$("input[type='radio']").on("click", function (e) {
+		var radio = $(this);
 
-				var yes = $(this), // capture the circle that was clicked on into a variable
-					text = yes_selected.data(".meds"), //looks for the data-text attribute and stores its value
-					/*
-						Traverse DOM to the closest .photo-container ancestor and then
-						find a descendant of that ancestor with the selector .info_slides. This
-						allows us to only trigger and manipulate the pop up for the clicked circle's
-						photo container
-					*/
-					/*		popUp = yes_selected.closest('.meds').find(".info_slides"),
-							popUp_text = popUp.find(".info_popIn");*/
+		if (radio.val() === "yes") {
+			radio.closest("p").next(".meds").addClass("active");
+		} else {
+			radio.closest("p").next(".meds").removeClass("active");
+		}
+	});
 
+	$("input[type='checkbox']").on("click", function (e) {
+			var total = 0;
+			$("table").find("tbody").html("");
 
+			$("input[type='checkbox']:checked").each(function () {
+					var drug = $(this);
+					var drugName = drug.val();
+					var duaneReade = drug.data("duane-reade");
+					var astra = drug.data("astra");
+					var costco = drug.data("costco");
+					var html = "<tr><td>" + drugName + "</td><td>" + astra + "</td><td>" + duaneReade + "</td><td>" + costco + "</td></tr>";
 
-					$("input" [type = 'checkbox']: checked).each(function () {;
-						total = total + $(this).val();
+					$("table").find("tbody").append(html);
 
-
-					});
+					$(".button").on("click", "reset");
+				);
 			});
+	});
+
+
+});
