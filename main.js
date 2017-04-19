@@ -28,6 +28,7 @@ $(document).ready(function () { // we must wait for the DOM to be ready as the b
 			$(".button").on("click", function (e) {
 				e.preventDefault();
 				var lowesttotal = parseInt($(drug.data("lowest")).val());
+
 			});
 
 		});
